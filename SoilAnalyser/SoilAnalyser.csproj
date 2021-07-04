@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DD500E5-E33A-49EA-9098-08F49A3F32BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoilAnalyser</RootNamespace>
+    <AssemblyName>SoilAnalyser</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\BombaCTRL.cs" />
+    <Compile Include="DataSet_Irrigacoes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Irrigacoes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_Medicoes.cs">
+      <DependentUpon>DataSet_Medicoes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_Medicoes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Medicoes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BombaDAO.cs" />
+    <Compile Include="Control\AreaCTRL.cs" />
+    <Compile Include="Model\AreaDAO.cs" />
+    <Compile Include="View\Relatórios\Irrigações\Rel_Irrigacoes_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatórios\Irrigações\Rel_Irrigacoes_View.Designer.cs">
+      <DependentUpon>Rel_Irrigacoes_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Relatórios\Irrigações\Rel_Irrigacoes_Parametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatórios\Irrigações\Rel_Irrigacoes_Parametros.Designer.cs">
+      <DependentUpon>Rel_Irrigacoes_Parametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="View\Consultas\TelaCarregandoConsultaUmidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consultas\TelaCarregandoConsultaUmidade.Designer.cs">
+      <DependentUpon>TelaCarregandoConsultaUmidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Relatórios\Medições\Rel_Medicoes_Parametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatórios\Medições\Rel_Medicoes_Parametros.Designer.cs">
+      <DependentUpon>Rel_Medicoes_Parametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Relatórios\Medições\Rel_Medicoes_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatórios\Medições\Rel_Medicoes_View.Designer.cs">
+      <DependentUpon>Rel_Medicoes_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bomba\TelaBomba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Bomba\TelaBomba.Designer.cs">
+      <DependentUpon>TelaBomba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bomba\TelaPesqBomba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Bomba\TelaPesqBomba.Designer.cs">
+      <DependentUpon>TelaPesqBomba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Area\TelaPesqArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Area\TelaPesqArea.Designer.cs">
+      <DependentUpon>TelaPesqArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consultas\ConsultaUmidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consultas\ConsultaUmidade.Designer.cs">
+      <DependentUpon>ConsultaUmidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DB.cs" />
+    <Compile Include="Control\ParametrosCTRL.cs" />
+    <Compile Include="Model\ParametrosDAO.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UsuarioDAO.cs" />
+    <Compile Include="Control\UsuarioCTRL.cs" />
+    <Compile Include="View\Area\TelaArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Area\TelaArea.Designer.cs">
+      <DependentUpon>TelaArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Parâmetros\TelaParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Parâmetros\TelaParametros.Designer.cs">
+      <DependentUpon>TelaParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\TelaPesqUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\TelaPesqUsuario.Designer.cs">
+      <DependentUpon>TelaPesqUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Principal\TelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Principal\TelaPrincipal.Designer.cs">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Ajuda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Ajuda.Designer.cs">
+      <DependentUpon>UC_Ajuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Cadastros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Cadastros.Designer.cs">
+      <DependentUpon>UC_Cadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Configuracoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Configuracoes.Designer.cs">
+      <DependentUpon>UC_Configuracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Graficos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Graficos.Designer.cs">
+      <DependentUpon>UC_Graficos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Irrigacoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Irrigacoes.Designer.cs">
+      <DependentUpon>UC_Irrigacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Relatorios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC%27s\UC_Relatorios.Designer.cs">
+      <DependentUpon>UC_Relatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Principal\TelaCarregando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Principal\TelaCarregando.Designer.cs">
+      <DependentUpon>TelaCarregando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Principal\TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Principal\TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\TelaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\TelaUsuario.Designer.cs">
+      <DependentUpon>TelaUsuario.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RelatorioIrrigacoes.rdlc" />
+    <EmbeddedResource Include="RelatorioMedicoes.rdlc" />
+    <EmbeddedResource Include="View\Relatórios\Irrigações\Rel_Irrigacoes_View.resx">
+      <DependentUpon>Rel_Irrigacoes_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consultas\TelaCarregandoConsultaUmidade.resx">
+      <DependentUpon>TelaCarregandoConsultaUmidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Bomba\TelaBomba.resx">
+      <DependentUpon>TelaBomba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Bomba\TelaPesqBomba.resx">
+      <DependentUpon>TelaPesqBomba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Area\TelaPesqArea.resx">
+      <DependentUpon>TelaPesqArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consultas\ConsultaUmidade.resx">
+      <DependentUpon>ConsultaUmidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Area\TelaArea.resx">
+      <DependentUpon>TelaArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Parâmetros\TelaParametros.resx">
+      <DependentUpon>TelaParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatórios\Irrigações\Rel_Irrigacoes_Parametros.resx">
+      <DependentUpon>Rel_Irrigacoes_Parametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatórios\Medições\Rel_Medicoes_Parametros.resx">
+      <DependentUpon>Rel_Medicoes_Parametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatórios\Medições\Rel_Medicoes_View.resx">
+      <DependentUpon>Rel_Medicoes_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\TelaPesqUsuario.resx">
+      <DependentUpon>TelaPesqUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\TelaPrincipal.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC%27s\UC_Ajuda.resx">
+      <DependentUpon>UC_Ajuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC%27s\UC_Cadastros.resx">
+      <DependentUpon>UC_Cadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC%27s\UC_Configuracoes.resx">
+      <DependentUpon>UC_Configuracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC%27s\UC_Graficos.resx">
+      <DependentUpon>UC_Graficos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC%27s\UC_Irrigacoes.resx">
+      <DependentUpon>UC_Irrigacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC%27s\UC_Relatorios.resx">
+      <DependentUpon>UC_Relatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\TelaCarregando.resx">
+      <DependentUpon>TelaCarregando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\TelaUsuario.resx">
+      <DependentUpon>TelaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet_Irrigacoes.xsc">
+      <DependentUpon>DataSet_Irrigacoes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_Irrigacoes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Irrigacoes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_Irrigacoes.xss">
+      <DependentUpon>DataSet_Irrigacoes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_Medicoes.xsc">
+      <DependentUpon>DataSet_Medicoes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_Medicoes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DataSet_Medicoes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_Medicoes.xss">
+      <DependentUpon>DataSet_Medicoes.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SoilAnalyser3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela_Principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela_Principal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela_Principal_FINAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif_Mais_rapido.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-checkmark-24.png" />
+    <None Include="Resources\Yes.ico" />
+    <None Include="Resources\No1.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
